@@ -2230,6 +2230,58 @@ figure {
   }
 }
 
+/* Keep legacy package listing layout identical across devices (no box styling) */
+.package-block .inner-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 0; /* keep compact */
+  background:transparent; /* do not create box */
+  box-shadow:none;
+}
+.package-block .inner-box .image{
+  flex:0 0 56px;
+  width:56px;
+}
+.package-block .inner-box .image img{
+  width:56px;height:56px;object-fit:cover;border-radius:8px;display:block;
+}
+.package-block .inner-box .content{
+  flex:1 1 auto;min-width:0;
+}
+.package-block .inner-box .content h3.title{display:flex;align-items:center;gap:8px;margin:0;}
+.package-block .inner-box .content h3.title a{font-weight:700;color:inherit;white-space:nowrap;}
+.package-block .inner-box .content h3.title .line{flex:1}
+.package-block .inner-box .content h3.title span{color:#777;margin-left:6px}
+.package-block .inner-box .content h3.title span:not(.price-line){white-space:nowrap}
+.package-block .inner-box .content h3.title p{display:inline-block;margin:0 0 0 8px;text-align:right;white-space:nowrap;color:#1a1a1a;font-size:1rem}
+.package-block .inner-box .content .title + .title{margin-top:6px}
+.btn-booking{background:#000;color:#fff;border-radius:20px;padding:6px 12px;border:none}
+
+/* Ensure the horizontal layout remains on small viewports per user's request */
+@media (max-width:479.98px){
+  .package-block .inner-box{flex-wrap:nowrap}
+  .package-block .inner-box .content h3.title{gap:6px}
+  .package-block .inner-box .image{flex:0 0 48px;width:48px}
+  .package-block .inner-box .image img{width:48px;height:48px}
+}
+
+/* price-line and from styling */
+.package-block .from{color:#777;margin-left:6px;font-size:0.95rem}
+.package-block .price-line{display:inline-block;margin-left:8px;text-align:right;white-space:normal;color:#111;font-weight:600;font-size:0.95rem}
+/* stronger override for price-line to ensure <br> works on all devices */
+.package-block .inner-box .content h3.title .price-line{white-space:normal}
+@media (max-width:479.98px){
+  .package-block .price-line{font-size:0.95rem}
+}
+
+/* Allow price paragraphs to break on small screens so <br> works */
+@media (max-width:479.98px){
+  .package-block .inner-box .content h3.title p{white-space:normal;display:inline-block}
+  .package-block .inner-box .content h3.title span{white-space:normal}
+}
+
+
 @keyframes sway {
   0% {
     -webkit-transform: translateX(-20px);
