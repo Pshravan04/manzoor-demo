@@ -176,5 +176,5 @@
 }
 @media (max-width:480px){
   .choose-section .choose-card{padding:18px;border-radius:12px}
-  .choose-section .choose-card.small{min-height: 370px;}
+  .choose-section .choose-card.small{height: 370px;}
 }
