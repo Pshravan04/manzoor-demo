@@ -41,17 +41,10 @@ var THEMEMASCOT = {};
 		},
 	};
 
-	// Preloader area start here ***
-	const loader = () => {
-		$(window).on("load", function () {
-			$("#preloader").addClass("loaded");
-			$("#preloader").delay(500).fadeOut();
-		});
-	};
-	loader();
-	// Preloader area end here ***
+	// Preloader removed (no-op)
 
 	// Color mood area start here ***
+
 	// function setThemeColor(color) {
 	// 	const root = document.documentElement;
 	// 	root.setAttribute("data-theme", color);
